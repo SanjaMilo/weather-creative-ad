@@ -25,6 +25,8 @@ async function displayInfo() {
     // Fetch data for ip location:
     let data = await fetchData(urlForIP);
 
+    const { city } = data;
+
     lat = addDecimals(data.latitude, 2);
     lon = addDecimals(data.longitude, 2);
 
@@ -33,11 +35,13 @@ async function displayInfo() {
     // Fetch data for weather details:
     let weatherInfo = await fetchData(urlForWeather);
 
+    const { temp } = weatherInfo.current;
+
     // Show text information, the city and current temperature, depending on the the user's browser location:
-    showText.innerText =`${data.city} ${addDecimals(weatherInfo.current.temp, 0)} \u2103`;
+    showText.innerText =`${city} ${addDecimals(temp, 0)} \u2103`;
 
     // display all background images in slide-show time interval, depending on the current temperature: 
-    changeBGImage(weatherInfo.current.temp);
+    changeBGImage(temp);
 };
 
 // on page load:

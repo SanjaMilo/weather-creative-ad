@@ -19,22 +19,22 @@ async function fetchData (url) {
 
 function changeBGImage(val) {
     if (val < 15) {
-        slideImages(imagesCold) 
+        slideImages(imagesCold);
         setInterval(function() {
             slideImages(imagesCold) 
         }, 5000);
         
     } else if (val >= 15 && val <= 23) {
-        slideImages(imagesWarm)
+        slideImages(imagesWarm);
         setInterval(function() {
             slideImages(imagesWarm)
-        }, 5000)
+        }, 5000);
         
     } else {
-        slideImages(imagesHot)
+        slideImages(imagesHot);
         setInterval(function(){
             slideImages(imagesHot)
-        }, 5000)  
+        }, 5000); 
     }
 };
 
@@ -42,8 +42,7 @@ let i = 0; // start index in the array of images
 
 function slideImages (arr) {
     bgCreative.style.backgroundImage = `url(${arr[i].imgUrl})`;
-    bgCreative.style.opacity = '1';
-    
+    bgCreative.style.opacity = '1';  
     // go to next image in the array
     i++;
     // back to first image in the array
