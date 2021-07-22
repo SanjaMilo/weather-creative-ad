@@ -19,22 +19,25 @@ async function fetchData (url) {
 
 function changeBGImage(val) {
     if (val < 15) {
-        slideImages(imagesCold);
         setInterval(function() {
             slideImages(imagesCold) 
         }, 5000);
-        
+    
+        slideImages(imagesCold);
+
     } else if (val >= 15 && val <= 23) {
-        slideImages(imagesWarm);
         setInterval(function() {
             slideImages(imagesWarm)
         }, 5000);
-        
+
+        slideImages(imagesWarm); 
+
     } else {
-        slideImages(imagesHot);
         setInterval(function(){
             slideImages(imagesHot)
         }, 5000); 
+
+        slideImages(imagesHot);
     }
 };
 
@@ -50,6 +53,5 @@ function slideImages (arr) {
         i = 0
     };
 };
-
 
 
