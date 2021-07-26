@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap');
 
-html, body {
+html,
+body {
     margin: 0;
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
@@ -9,13 +10,24 @@ html, body {
     text-align: center;
 }
 
+/* Pre-load images  */
+
+body::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+    content: url(../assets/images/cold1.jpg) url(../assets/images/cold2.jpg) url(../assets/images/cold3.jpg) url(../assets/images/warm1.jpg) url(../assets/images/warm2.jpg) url(../assets/images/warm3.jpg) url(../assets/images/hot1.jpg) url(../assets/images/hot2.jpg) url(../assets/images/hot3.jpg);
+}
+
 * {
     box-sizing: border-box;
 }
 
 .main {
     width: 100vw;
-    height: 100vh; 
+    height: 100vh;
     overflow: hidden;
     position: relative;
 }
@@ -32,7 +44,7 @@ html, body {
 }
 
 .text-wrapper {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0,0,0, 0.25));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
     width: 75%;
     padding: 3%;
     border: 2px solid #ffffff;
@@ -41,7 +53,7 @@ html, body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: show_title 2.5s 1s forwards;
+    animation: show_title 3.5s 1s forwards;
     opacity: 0;
 }
 
@@ -56,6 +68,7 @@ html, body {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1
     }

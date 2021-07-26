@@ -38,10 +38,10 @@ async function displayInfo() {
     const { temp } = weatherInfo.current;
 
     // Show text information, the city and current temperature, depending on the the user's browser location:
-    showText.innerText =`${city} ${addDecimals(temp, 0)} \u2103`;
+    showText.innerText =`${city} ${addDecimals(temp, 0)}\u2103`;
 
     // display all background images in slide-show time interval, depending on the current temperature: 
-    changeBGImage(temp);
+    changeBGImage(addDecimals(temp, 0)); 
 };
 
 // on page load:

@@ -17,33 +17,9 @@ async function fetchData (url) {
 
 // CHANGE BACKGROUND IMAGE 
 
-function changeBGImage(val) {
-    if (val < 15) {
-        setInterval(function() {
-            slideImages(imagesCold) 
-        }, 5000);
-    
-        slideImages(imagesCold);
-
-    } else if (val >= 15 && val <= 23) {
-        setInterval(function() {
-            slideImages(imagesWarm)
-        }, 5000);
-
-        slideImages(imagesWarm); 
-
-    } else {
-        setInterval(function(){
-            slideImages(imagesHot)
-        }, 5000); 
-
-        slideImages(imagesHot);
-    }
-};
-
 let i = 0; // start index in the array of images 
 
-function slideImages (arr) {
+function slideImages(arr) {
     bgCreative.style.backgroundImage = `url(${arr[i].imgUrl})`;
     bgCreative.style.opacity = '1';  
     // go to next image in the array
@@ -53,5 +29,46 @@ function slideImages (arr) {
         i = 0
     };
 };
+
+function onInterval(slider, imgArr) {
+    setInterval(function() {
+        slider(imgArr);
+    }, 5000);
+
+    slider(imgArr);
+};
+
+// Using switch 
+
+function changeBGImage(val) {
+
+    switch (true) {
+
+        case val < 15 : 
+            onInterval(slideImages, imagesCold);
+
+        case val >= 15 && val <= 23 :
+            onInterval(slideImages, imagesWarm);
+        
+        case val > 23 : 
+        onInterval(slideImages, imagesHot);
+
+    }
+};
+
+// Using if else 
+
+// function changeBGImage(val) {
+//     if (val < 15) {
+//         onInterval(slideImages, imagesCold)
+
+//     } else if (val >= 15 && val <= 23) { 
+//         onInterval(slideImages, imagesWarm)
+
+//     } else {
+//         onInterval(slideImages, imagesHot)
+//     }
+// };
+
 
 
