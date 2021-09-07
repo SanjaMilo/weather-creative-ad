@@ -16,8 +16,10 @@ body::after {
     position: absolute;
     width: 0;
     height: 0;
-    overflow: hidden;
+    /* hide images: */
+    overflow: hidden; 
     z-index: -1;
+    /* load images: */
     content: url(../assets/images/cold1.jpg) url(../assets/images/cold2.jpg) url(../assets/images/cold3.jpg) url(../assets/images/warm1.jpg) url(../assets/images/warm2.jpg) url(../assets/images/warm3.jpg) url(../assets/images/hot1.jpg) url(../assets/images/hot2.jpg) url(../assets/images/hot3.jpg);
 }
 

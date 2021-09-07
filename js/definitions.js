@@ -46,13 +46,15 @@ function changeBGImage(val) {
 
         case val < 15 : 
             onInterval(slideImages, imagesCold);
-
+            break;
         case val >= 15 && val <= 23 :
             onInterval(slideImages, imagesWarm);
-        
+            break;
         case val > 23 : 
-        onInterval(slideImages, imagesHot);
-
+            onInterval(slideImages, imagesHot);
+            break;
+        default: 
+            return;
     }
 };
 
